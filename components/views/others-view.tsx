@@ -3,7 +3,7 @@
 import Image from "next/image"
 
 interface OtherProject {
-  id: string
+  id: number
   title: string
   description: string
   image: string

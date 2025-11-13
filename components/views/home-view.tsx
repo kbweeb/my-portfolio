@@ -10,7 +10,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
   return (
     <div className="w-full min-h-screen bg-background">
       {/* Main content section */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-24">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-16 py-6 sm:py-10 md:py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12 max-w-7xl mx-auto">
           {/* Left content */}
           <div className="flex-1 space-y-6 w-full">
@@ -54,7 +54,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
           {/* Right content - Profile image and bio */}
           <div className="flex-1 space-y-6 w-full">
-            <div className="relative w-full max-w-sm aspect-square rounded-lg overflow-hidden bg-secondary border border-border mx-auto lg:mx-0">
+            <div className="relative w-full max-w-[220px] sm:max-w-sm aspect-square rounded-lg overflow-hidden bg-secondary border border-border mx-auto lg:mx-0">
               <Image src="/placeholder.jpg" alt="Joshua Effiong" fill className="object-cover" />
             </div>
 

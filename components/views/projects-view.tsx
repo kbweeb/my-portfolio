@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState } from "react"
 
 interface Project {
-  id: string
+  id: number
   title: string
   description: string
   fullDescription: string
@@ -82,7 +82,7 @@ export default function ProjectsView() {
             </p>
 
             {/* Features */}
-            <div className="grid grid-cols-3 gap-4 py-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-8">
               {selectedProject.features.map((feature, idx) => (
                 <div key={idx} className="p-4 bg-secondary rounded-lg border border-border text-center">
                   <p className="text-sm text-muted-foreground">{feature}</p>

@@ -104,19 +104,25 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                   Hardware-Software Integration Engineer
                 </p>
                 <div className="mt-6 h-px w-40 bg-primary/60 rounded" />
-                <div className="mt-6 space-y-3 text-sm text-muted-foreground">
-                  <p className="text-primary font-semibold">PROJECTS</p>
+                <div className="mt-6 flex flex-col gap-3">
+                  <button
+                    type="button"
+                    className="text-xs sm:text-sm font-medium text-primary text-left"
+                    aria-current="page"
+                  >
+                    — PROJECTS
+                  </button>
                   <button
                     type="button"
                     onClick={() => (onNavigate ? onNavigate("others") : (window.location.hash = "others"))}
-                    className="hover:text-primary transition-colors text-left"
+                    className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
                   >
                     — OTHERS
                   </button>
                   <button
                     type="button"
                     onClick={() => (onNavigate ? onNavigate("about") : (window.location.hash = "about"))}
-                    className="hover:text-primary transition-colors text-left"
+                    className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
                   >
                     — ABOUT ME
                   </button>

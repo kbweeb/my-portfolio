@@ -32,7 +32,7 @@ const otherProjects: OtherProject[] = [
 
 export default function OthersView() {
   return (
-    <div className="w-full min-h-screen md:ml-80 bg-background">
+    <div className="w-full min-h-screen bg-background">
       <div className="px-6 md:px-16 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Left title/intro and nav mimic */}

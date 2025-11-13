@@ -23,7 +23,7 @@ export default function AboutView() {
   ]
 
   return (
-    <div className="w-full min-h-screen md:ml-80 bg-background">
+    <div className="w-full min-h-screen bg-background">
       <div className="px-6 md:px-16 py-16 md:py-24">
         <div className="max-w-4xl space-y-12">
           {/* Header */}

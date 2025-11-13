@@ -30,7 +30,11 @@ const otherProjects: OtherProject[] = [
   },
 ]
 
-export default function OthersView() {
+interface OthersViewProps {
+  onNavigate?: (view: string) => void
+}
+
+export default function OthersView({ onNavigate }: OthersViewProps) {
   return (
     <div className="w-full min-h-screen bg-background">
       <div className="px-6 md:px-16 py-16 md:py-24">
@@ -43,9 +47,21 @@ export default function OthersView() {
             </p>
             <div className="mt-6 h-px w-40 bg-primary/60 rounded" />
             <div className="mt-6 space-y-3 text-sm text-muted-foreground">
-              <p>— PROJECTS</p>
+              <button
+                type="button"
+                onClick={() => (onNavigate ? onNavigate("projects") : (window.location.hash = "projects"))}
+                className="hover:text-primary transition-colors text-left"
+              >
+                — PROJECTS
+              </button>
               <p className="text-primary font-semibold">OTHERS</p>
-              <p>— ABOUT ME</p>
+              <button
+                type="button"
+                onClick={() => (onNavigate ? onNavigate("about") : (window.location.hash = "about"))}
+                className="hover:text-primary transition-colors text-left"
+              >
+                — ABOUT ME
+              </button>
             </div>
           </div>
 

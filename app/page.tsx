@@ -30,9 +30,9 @@ export default function Home() {
     <main className="w-full bg-background text-foreground min-h-screen">
       <div className="w-full">
         {currentView === "home" && <HomeView onNavigate={handleNavigate} />}
-        {currentView === "projects" && <ProjectsView />}
-        {currentView === "others" && <OthersView />}
-        {currentView === "about" && <AboutView />}
+        {currentView === "projects" && <ProjectsView onNavigate={handleNavigate} />}
+        {currentView === "others" && <OthersView onNavigate={handleNavigate} />}
+        {currentView === "about" && <AboutView onNavigate={handleNavigate} />}
       </div>
     </main>
   )

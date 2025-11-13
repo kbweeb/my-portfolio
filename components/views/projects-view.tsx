@@ -36,7 +36,11 @@ const projects: Project[] = [
   },
 ]
 
-export default function ProjectsView() {
+interface ProjectsViewProps {
+  onNavigate?: (view: string) => void
+}
+
+export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (
@@ -102,8 +106,20 @@ export default function ProjectsView() {
                 <div className="mt-6 h-px w-40 bg-primary/60 rounded" />
                 <div className="mt-6 space-y-3 text-sm text-muted-foreground">
                   <p className="text-primary font-semibold">PROJECTS</p>
-                  <p>— OTHERS</p>
-                  <p>— ABOUT ME</p>
+                  <button
+                    type="button"
+                    onClick={() => (onNavigate ? onNavigate("others") : (window.location.hash = "others"))}
+                    className="hover:text-primary transition-colors text-left"
+                  >
+                    — OTHERS
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => (onNavigate ? onNavigate("about") : (window.location.hash = "about"))}
+                    className="hover:text-primary transition-colors text-left"
+                  >
+                    — ABOUT ME
+                  </button>
                 </div>
               </div>
 

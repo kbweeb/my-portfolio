@@ -3,7 +3,11 @@
 import { Cpu, Code2, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export default function AboutView() {
+interface AboutViewProps {
+  onNavigate?: (view: string) => void
+}
+
+export default function AboutView({ onNavigate }: AboutViewProps) {
   const values = [
     {
       icon: Cpu,
@@ -34,6 +38,12 @@ export default function AboutView() {
               smallest microcontroller to complex distributed systems, I find joy in understanding every layer of the
               stack.
             </p>
+            {/* Quick nav */}
+            <div className="flex gap-4 text-sm pt-2">
+              <button type="button" onClick={() => onNavigate?.("home")} className="text-muted-foreground hover:text-primary">Home</button>
+              <button type="button" onClick={() => onNavigate?.("projects")} className="text-muted-foreground hover:text-primary">Projects</button>
+              <button type="button" onClick={() => onNavigate?.("others")} className="text-muted-foreground hover:text-primary">Others</button>
+            </div>
           </div>
 
           {/* Journey Section */}

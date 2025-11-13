@@ -1,0 +1,42 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata: Metadata = {
+  title: "Joshua Effiong - Hardware-Software Integration Engineer",
+  description:
+    "Personal portfolio of Joshua Effiong, a hardware-software integration engineer building bridges between circuit boards and software logic.",
+  generator: "v0.app",
+  icons: {
+    icon: [
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/apple-icon.png",
+  },
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${inter.className} antialiased bg-background text-foreground`}>{children}</body>
+    </html>
+  )
+}

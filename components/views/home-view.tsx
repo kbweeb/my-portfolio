@@ -33,19 +33,19 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             {/* Navigation Links */}
             <div className="flex flex-col gap-3 pt-4">
-              <button
+              <button type="button"
                 onClick={() => onNavigate("projects")}
                 className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
               >
                 — PROJECTS
               </button>
-              <button
+              <button type="button"
                 onClick={() => onNavigate("others")}
                 className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
               >
                 — OTHERS
               </button>
-              <button
+              <button type="button"
                 onClick={() => onNavigate("about")}
                 className="text-xs sm:text-sm font-medium text-primary transition-colors text-left"
               >
@@ -120,13 +120,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>&copy; 2025 Joshua Effiong. All rights reserved.</p>
           <div className="flex gap-4 sm:gap-6">
-            <button onClick={() => onNavigate("projects")} className="hover:text-foreground transition-colors">
+            <button type="button" onClick={() => onNavigate("projects")} className="hover:text-foreground transition-colors">
               Projects
             </button>
-            <button onClick={() => onNavigate("others")} className="hover:text-foreground transition-colors">
+            <button type="button" onClick={() => onNavigate("others")} className="hover:text-foreground transition-colors">
               Others
             </button>
-            <button onClick={() => onNavigate("about")} className="hover:text-foreground transition-colors">
+            <button type="button" onClick={() => onNavigate("about")} className="hover:text-foreground transition-colors">
               About
             </button>
           </div>

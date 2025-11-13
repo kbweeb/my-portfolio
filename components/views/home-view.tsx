@@ -1,6 +1,8 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
+import { Github, Linkedin, Instagram } from "lucide-react"
 
 interface HomeViewProps {
   onNavigate: (view: string) => void
@@ -49,6 +51,37 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               >
                 — ABOUT ME
               </button>
+            </div>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-4 pt-6">
+              <Link
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </Link>
             </div>
           </div>
 

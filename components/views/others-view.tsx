@@ -34,32 +34,38 @@ export default function OthersView() {
   return (
     <div className="w-full min-h-screen md:ml-80 bg-background">
       <div className="px-6 md:px-16 py-16 md:py-24">
-        <h2 className="text-3xl font-bold text-foreground mb-12">Other Projects & Experiments</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Left title/intro and nav mimic */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Joshua Effiong</h2>
+            <p className="text-sm text-muted-foreground max-w-md">
+              Hardware-Software Integration Engineer
+            </p>
+            <div className="mt-6 h-px w-40 bg-primary/60 rounded" />
+            <div className="mt-6 space-y-3 text-sm text-muted-foreground">
+              <p>— PROJECTS</p>
+              <p className="text-primary font-semibold">OTHERS</p>
+              <p>— ABOUT ME</p>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {otherProjects.map((project) => (
-            <div key={project.id} className="group cursor-pointer">
-              <div className="space-y-4">
-                {/* Project image */}
-                <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+          {/* Right: list style cards */}
+          <div className="space-y-4">
+            {otherProjects.map((project) => (
+              <div
+                key={project.id}
+                className="flex items-start gap-4 p-4 rounded-xl border border-border bg-secondary/50 hover:border-primary/60 transition-colors"
+              >
+                <div className="relative w-28 h-20 rounded-md overflow-hidden shrink-0">
+                  <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
                 </div>
-
-                {/* Project info */}
-                <div className="space-y-2">
-                  <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{project.description}</p>
+                <div className="space-y-1">
+                  <h3 className="text-sm font-semibold text-foreground">{project.title}</h3>
+                  <p className="text-xs text-muted-foreground max-w-md">{project.description}</p>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 

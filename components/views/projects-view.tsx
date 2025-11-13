@@ -92,17 +92,58 @@ export default function ProjectsView() {
           </div>
         ) : (
           <div className="space-y-12">
-            <h2 className="text-3xl font-bold text-foreground mb-12">Featured Projects</h2>
+            {/* Hero project card */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Joshua Effiong</h2>
+                <p className="text-sm text-muted-foreground max-w-md">
+                  Hardware-Software Integration Engineer
+                </p>
+                <div className="mt-6 h-px w-40 bg-primary/60 rounded" />
+                <div className="mt-6 space-y-3 text-sm text-muted-foreground">
+                  <p className="text-primary font-semibold">PROJECTS</p>
+                  <p>— OTHERS</p>
+                  <p>— ABOUT ME</p>
+                </div>
+              </div>
 
+              {/* Right: hero image and pills */}
+              <button
+                onClick={() => setSelectedProject(projects[0])}
+                className="text-left group cursor-pointer"
+              >
+                <div className="space-y-4">
+                  <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
+                    <Image
+                      src={projects[0].image || "/placeholder.svg"}
+                      alt={projects[0].title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="flex gap-2 flex-wrap">
+                    {projects[0].tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-xs text-muted-foreground max-w-md">
+                    {projects[0].description}
+                  </p>
+                </div>
+              </button>
+            </div>
+
+            {/* Other projects grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.map((project) => (
+              {projects.slice(1).map((project) => (
                 <button
                   key={project.id}
                   onClick={() => setSelectedProject(project)}
                   className="text-left group cursor-pointer"
                 >
                   <div className="space-y-4">
-                    {/* Project image */}
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
                       <Image
                         src={project.image || "/placeholder.svg"}
@@ -111,16 +152,14 @@ export default function ProjectsView() {
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-
-                    {/* Project info */}
-                    <div className="space-y-3">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                    <div className="space-y-2">
+                      <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-sm text-muted-foreground">{project.description}</p>
-                      <div className="flex gap-2 flex-wrap pt-2">
+                      <div className="flex gap-2 flex-wrap pt-1">
                         {project.tags.map((tag) => (
-                          <span key={tag} className="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded">
+                          <span key={tag} className="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
                             {tag}
                           </span>
                         ))}

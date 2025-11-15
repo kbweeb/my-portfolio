@@ -42,6 +42,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             <div className="flex gap-4 text-sm pt-2">
               <button type="button" onClick={() => onNavigate?.("home")} className="text-muted-foreground hover:text-primary">Home</button>
               <button type="button" onClick={() => onNavigate?.("projects")} className="text-muted-foreground hover:text-primary">Projects</button>
+              <button type="button" onClick={() => onNavigate?.("skills")} className="text-muted-foreground hover:text-primary">Skills</button>
               <button type="button" onClick={() => onNavigate?.("others")} className="text-muted-foreground hover:text-primary">Others</button>
             </div>
           </div>
@@ -63,6 +64,23 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               Based in Accra, Ghana. Open to opportunities in software engineering, embedded systems, and game
               development. Let's connect and build something impactful.
             </p>
+          </div>
+
+          {/* Experience Section */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-foreground">Experience</h3>
+            <div className="p-5 rounded-lg border border-border bg-secondary/50">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <h4 className="font-semibold text-foreground">Software Developer Intern — Cheque Processing System</h4>
+                <span className="text-xs text-muted-foreground">Apex Bank, Ghana · Sep 2025 – Nov 2025</span>
+              </div>
+              <ul className="mt-3 list-disc list-inside text-sm text-muted-foreground space-y-1">
+                <li>Developing a Cheque Processing System using C# and .NET to automate banking transaction workflows.</li>
+                <li>Designing and implementing modules for cheque validation, data entry, and reporting.</li>
+                <li>Collaborating with bank staff to refine requirements and improve usability.</li>
+                <li>Testing and debugging to ensure accurate and reliable transaction processing.</li>
+              </ul>
+            </div>
           </div>
 
           {/* Values Grid */}

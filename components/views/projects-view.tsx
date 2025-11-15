@@ -27,14 +27,14 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Space Shooter Game",
+    title: "AI Chatbot for Anime Queries",
     description:
-      "A classic arcade-style space shooter game with enemy AI, power-ups, collision detection, and progressive difficulty.",
+      "An AI-powered chatbot that answers questions about anime series, characters, and recommendations.",
     fullDescription:
-      "A classic arcade-style space shooter game built with C# and Unity, featuring enemy AI, power-ups, collision detection, and progressive difficulty levels.",
+      "Built with C# (.NET) and Python, integrated with an NLP API (like GPT) to handle natural language queries. Supports searching anime databases, providing summaries, and suggesting similar shows based on user preferences.",
     image: "/placeholder.jpg",
-    tags: ["C#", "Unity", "Game Dev", "2D"],
-    features: ["Enemy AI", "Power-ups", "Progressive difficulty"],
+    tags: ["C#", ".NET", "Python", "NLP", "AI"],
+    features: ["Anime search", "Summaries", "Recommendations"],
   },
   {
     id: 3,
@@ -122,6 +122,13 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                     aria-current="page"
                   >
                     — PROJECTS
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => (onNavigate ? onNavigate("skills") : (window.location.hash = "skills"))}
+                    className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+                  >
+                    — SKILLS & TECHNOLOGIES
                   </button>
                   <button
                     type="button"

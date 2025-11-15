@@ -41,6 +41,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 — PROJECTS
               </button>
               <button type="button"
+                onClick={() => onNavigate("skills")}
+                className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
+              >
+                — SKILLS & TECHNOLOGIES
+              </button>
+              <button type="button"
                 onClick={() => onNavigate("others")}
                 className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
               >
@@ -101,6 +107,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="flex gap-4 sm:gap-6">
             <button type="button" onClick={() => onNavigate("projects")} className="hover:text-foreground transition-colors">
               Projects
+            </button>
+            <button type="button" onClick={() => onNavigate("skills")} className="hover:text-foreground transition-colors">
+              Skills
             </button>
             <button type="button" onClick={() => onNavigate("others")} className="hover:text-foreground transition-colors">
               Others

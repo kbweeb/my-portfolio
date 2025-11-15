@@ -52,6 +52,13 @@ export default function OthersView({ onNavigate }: OthersViewProps) {
               >
                 — PROJECTS
               </button>
+              <button
+                type="button"
+                onClick={() => (onNavigate ? onNavigate("skills") : (window.location.hash = "skills"))}
+                className="hover:text-primary transition-colors text-left"
+              >
+                — SKILLS & TECHNOLOGIES
+              </button>
               <p className="text-primary font-semibold">OTHERS</p>
               <button
                 type="button"

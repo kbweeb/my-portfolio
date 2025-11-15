@@ -80,7 +80,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           {/* Right content - Profile image and bio */}
           <div className="flex-1 space-y-6 w-full">
             <div className="relative w-full max-w-[220px] sm:max-w-sm aspect-square rounded-lg overflow-hidden bg-secondary border border-border mx-auto lg:mx-0">
-              <Image src="/placeholder.jpg" alt="Kwabena Boateng" fill className="object-cover" />
+              <Image src="/profile.jpg" alt="Profile photo" fill className="object-cover" />
             </div>
 
             {/* Bio text */}

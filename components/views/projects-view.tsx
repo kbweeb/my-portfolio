@@ -29,7 +29,7 @@ const projects: Project[] = [
     tags: ["C++", "Encryption", "Security", "Banking"],
     features: ["User authentication", "Encrypted storage", "Transaction logs"],
     demoPath: undefined,
-    demoUrl: "https://encrypted-bank-system.vercel.app/",
+    demoUrl: "https://encrypted-bank-system.vercel.app/web/",
     repoUrl: "https://github.com/kbweeb/Encrypted-Bank-System",
   },
   {
@@ -57,7 +57,7 @@ const projects: Project[] = [
     tags: ["C++", "Algorithms", "Simulation", "Modeling"],
     features: ["Configurable rules", "Visualization", "Fast iteration"],
     demoPath: undefined,
-    demoUrl: "https://cellular-automata-cyan.vercel.app/",
+    demoUrl: "https://cellular-automata-cyan.vercel.app/web/",
     repoUrl: "https://github.com/kbweeb/Cellular-Automata",
   },
 ]

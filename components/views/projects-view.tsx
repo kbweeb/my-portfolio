@@ -16,23 +16,36 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Smart Energy Monitor System",
-    description: "Real-time monitoring of energy consumption patterns with intelligent tracking",
+    title: "Encrypted Bank System",
+    description:
+      "A secure banking system built with C++ featuring encryption protocols, user authentication, and transaction management.",
     fullDescription:
-      "This real-time energy monitoring tracker designed to help users monitor and optimize their energy consumption. The system has built-in anomaly detection for tracking energy consumption patterns and allowing users to pinpoint areas where energy is being wasted.",
-    image: "/smart-energy-monitoring-system-with-circuit-boards.jpg",
-    tags: ["PYTHON", "C++", "REACT"],
-    features: ["You can add alarms", "You can add rules", "You can add alarms"],
+      "A secure banking system built with C++ featuring encryption protocols, user authentication, and transaction management for safe financial operations.",
+    image: "/placeholder.jpg",
+    tags: ["C++", "Encryption", "Security", "Banking"],
+    features: ["User authentication", "Encrypted storage", "Transaction logs"],
   },
   {
     id: 2,
-    title: "IoT Weather Station",
-    description: "Comprehensive weather monitoring with real-time data tracking and forecasting",
+    title: "Space Shooter Game",
+    description:
+      "A classic arcade-style space shooter game with enemy AI, power-ups, collision detection, and progressive difficulty.",
     fullDescription:
-      "Building an IoT weather station that collects environmental data and provides real-time insights. The project integrates hardware sensors with cloud connectivity and a responsive web interface.",
+      "A classic arcade-style space shooter game built with C# and Unity, featuring enemy AI, power-ups, collision detection, and progressive difficulty levels.",
     image: "/placeholder.jpg",
-    tags: ["EMBEDDED C", "NODEJS", "REACT"],
-    features: ["Real-time updates", "Cloud sync", "Mobile responsive"],
+    tags: ["C#", "Unity", "Game Dev", "2D"],
+    features: ["Enemy AI", "Power-ups", "Progressive difficulty"],
+  },
+  {
+    id: 3,
+    title: "Cellular Automata Simulator",
+    description:
+      "A 2D cellular automaton simulator with adjustable rulesets for modeling complex systems and emergent patterns.",
+    fullDescription:
+      "A 2D cellular automaton simulator with adjustable rulesets for modeling complex systems and visualizing emergent patterns in computational biology.",
+    image: "/placeholder.jpg",
+    tags: ["C++", "Algorithms", "Simulation", "Modeling"],
+    features: ["Configurable rules", "Visualization", "Fast iteration"],
   },
 ]
 

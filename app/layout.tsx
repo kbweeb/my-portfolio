@@ -6,9 +6,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Joshua Effiong - Hardware-Software Integration Engineer",
+  title: "Kwabena Boateng — Portfolio",
   description:
-    "Personal portfolio of Joshua Effiong, a hardware-software integration engineer building bridges between circuit boards and software logic.",
+    "Computer Engineering Student and Software Engineering Enthusiast. Passionate about Software Development, Game Development and IoT Systems.",
   generator: "v0.app",
   icons: {
     icon: [

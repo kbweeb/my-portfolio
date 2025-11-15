@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Github, Linkedin, Instagram } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 
 interface HomeViewProps {
   onNavigate: (view: string) => void
@@ -18,17 +18,18 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="flex-1 space-y-6 w-full">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight text-balance">
-                Joshua Effiong
+                Kwabena Boateng
               </h2>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Hardware-Software Integration Engineer
+                Computer Engineering Student
               </p>
             </div>
 
             {/* Tagline */}
             <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed max-w-lg font-light">
-              I bring ideas to life where circuits meet code—Through smart systems, clean design, and hands-on
-              engineering.
+              And I'm a Software Engineering Enthusiast. Passionate about Software Development, Game Development and
+              IoT Systems. Exploring innovative solutions to refine my skills and contribute to cutting-edge projects
+              in technology and interactive media. Expected graduation: November 2027.
             </p>
 
             {/* Navigation Links */}
@@ -56,7 +57,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             {/* Social icons */}
             <div className="flex items-center gap-4 pt-6">
               <Link
-                href="https://github.com"
+                href="https://github.com/kbweeb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary/80 transition-colors"
@@ -65,7 +66,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 <Github className="w-5 h-5" />
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/kwabena-boateng-gyau-baffour-00067a308"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary/80 transition-colors"
@@ -73,42 +74,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               >
                 <Linkedin className="w-5 h-5" />
               </Link>
-              <Link
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </Link>
             </div>
           </div>
 
           {/* Right content - Profile image and bio */}
           <div className="flex-1 space-y-6 w-full">
             <div className="relative w-full max-w-[220px] sm:max-w-sm aspect-square rounded-lg overflow-hidden bg-secondary border border-border mx-auto lg:mx-0">
-              <Image src="/placeholder.jpg" alt="Joshua Effiong" fill className="object-cover" />
+              <Image src="/placeholder.jpg" alt="Kwabena Boateng" fill className="object-cover" />
             </div>
 
             {/* Bio text */}
             <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-sm mx-auto lg:mx-0">
               <p>
-                I&rsquo;m a <span className="text-foreground font-medium">builder at heart</span> fascinated by how
-                things work and obsessed with making them better. With a background in electrical engineering and a love
-                for coding, I create projects that fuse wires and logic, turning raw components into meaningful
-                experiences.
-              </p>
-              <p>
-                <span className="text-foreground font-medium">My dream?</span> To design the next generation of smart,
-                connected systems that power a better future.
-              </p>
-              <p>
-                Along the way, I&rsquo;ve built energy monitors, IoT prototypes, and interactive dashboards each one
-                teaching me how to bridge physical sensors with digital intelligence. I thrive when I&rsquo;m learning,
-                iterating, and getting my hands dirty with both code and hardware. Whether it&rsquo;s optimizing
-                firmware, designing PCB layouts, or creating user-facing interfaces, I&rsquo;m driven by curiosity,
-                impact, and the thrill of invention.
+                I'm a dedicated Computer Engineering student with a passion for creating innovative solutions through
+                code. My journey in technology has equipped me with a diverse skill set and a problem-solving mindset.
               </p>
             </div>
           </div>
@@ -118,7 +97,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* Footer */}
       <footer className="border-t border-border px-4 sm:px-6 md:px-8 lg:px-16 py-6 sm:py-8 mt-8 sm:mt-12">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>&copy; 2025 Joshua Effiong. All rights reserved.</p>
+          <p>&copy; 2025 Kwabena Boateng Gyau Baffour. All rights reserved.</p>
           <div className="flex gap-4 sm:gap-6">
             <button type="button" onClick={() => onNavigate("projects")} className="hover:text-foreground transition-colors">
               Projects

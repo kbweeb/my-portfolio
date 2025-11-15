@@ -35,9 +35,8 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">About Me</h2>
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
-              I'm a builder at heart, fascinated by how things work and obsessed with making them better. From the
-              smallest microcontroller to complex distributed systems, I find joy in understanding every layer of the
-              stack.
+              I'm a dedicated Computer Engineering student with a passion for creating innovative solutions through
+              code. My journey in technology has equipped me with a diverse skill set and a problem-solving mindset.
             </p>
             {/* Quick nav */}
             <div className="flex gap-4 text-sm pt-2">
@@ -51,9 +50,9 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-foreground">My Journey</h3>
             <p className="text-muted-foreground leading-relaxed">
-              My passion for engineering started with curiosity—taking things apart, understanding their mechanics, and
-              reimagining what they could become. This evolved into a career dedicated to bridging hardware and
-              software, creating intelligent systems that solve real problems.
+              Passionate about Software Development, Game Development and IoT Systems. Exploring innovative solutions
+              to refine my skills and contribute to cutting-edge projects in technology and interactive media.
+              Expected graduation: November 2027.
             </p>
           </div>
 
@@ -61,9 +60,8 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-foreground">My Vision</h3>
             <p className="text-muted-foreground leading-relaxed">
-              My dream? To design the next generation of smart, connected systems that shape a better future. I believe
-              in technology that serves humanity, systems that are intuitive to use, and solutions that scale
-              sustainably.
+              Based in Accra, Ghana. Open to opportunities in software engineering, embedded systems, and game
+              development. Let's connect and build something impactful.
             </p>
           </div>
 
@@ -95,7 +93,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
       {/* Footer */}
       <footer className="border-t border-border px-6 md:px-16 py-8 mt-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>&copy; 2025 Joshua Effiong. All rights reserved.</p>
+          <p>&copy; 2025 Kwabena Boateng Gyau Baffour. All rights reserved.</p>
         </div>
       </footer>
     </div>

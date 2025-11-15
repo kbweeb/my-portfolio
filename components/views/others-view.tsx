@@ -41,10 +41,8 @@ export default function OthersView({ onNavigate }: OthersViewProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Left title/intro and nav mimic */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Joshua Effiong</h2>
-            <p className="text-sm text-muted-foreground max-w-md">
-              Hardware-Software Integration Engineer
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Kwabena Boateng</h2>
+            <p className="text-sm text-muted-foreground max-w-md">Computer Engineering Student</p>
             <div className="mt-6 h-px w-40 bg-primary/60 rounded" />
             <div className="mt-6 space-y-3 text-sm text-muted-foreground">
               <button
@@ -88,7 +86,7 @@ export default function OthersView({ onNavigate }: OthersViewProps) {
       {/* Footer */}
       <footer className="border-t border-border px-6 md:px-16 py-8 mt-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>&copy; 2025 Joshua Effiong. All rights reserved.</p>
+          <p>&copy; 2025 Kwabena Boateng Gyau Baffour. All rights reserved.</p>
         </div>
       </footer>
     </div>

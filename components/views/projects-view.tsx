@@ -13,6 +13,8 @@ interface Project {
   tags: string[]
   features: string[]
   demoPath?: string
+  demoUrl?: string
+  repoUrl?: string
 }
 
 const projects: Project[] = [
@@ -26,7 +28,9 @@ const projects: Project[] = [
     image: "/placeholder.jpg",
     tags: ["C++", "Encryption", "Security", "Banking"],
     features: ["User authentication", "Encrypted storage", "Transaction logs"],
-    demoPath: "/projects/encrypted-bank",
+    demoPath: undefined,
+    demoUrl: "https://kbweeb.github.io/Encrypted-Bank-System",
+    repoUrl: "https://github.com/kbweeb/Encrypted-Bank-System",
   },
   {
     id: 2,
@@ -38,7 +42,9 @@ const projects: Project[] = [
     image: "/placeholder.jpg",
     tags: ["C#", ".NET", "Python", "NLP", "AI"],
     features: ["Anime search", "Summaries", "Recommendations"],
-    demoPath: "/projects/anime-chatbot",
+    demoPath: undefined,
+    demoUrl: "https://kbweeb.github.io/anime-chatbot",
+    repoUrl: "https://github.com/kbweeb/anime-chatbot-api",
   },
   {
     id: 3,
@@ -50,7 +56,9 @@ const projects: Project[] = [
     image: "/placeholder.jpg",
     tags: ["C++", "Algorithms", "Simulation", "Modeling"],
     features: ["Configurable rules", "Visualization", "Fast iteration"],
-    demoPath: "/projects/cellular-automata",
+    demoPath: undefined,
+    demoUrl: "https://kbweeb.github.io/Cellular-Automata",
+    repoUrl: "https://github.com/kbweeb/Cellular-Automata",
   },
 ]
 
@@ -135,13 +143,7 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                   >
                     — SKILLS & TECHNOLOGIES
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => (onNavigate ? onNavigate("others") : (window.location.hash = "others"))}
-                    className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
-                  >
-                    — OTHERS
-                  </button>
+                  
                   <button
                     type="button"
                     onClick={() => (onNavigate ? onNavigate("about") : (window.location.hash = "about"))}
@@ -153,10 +155,7 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
               </div>
 
               {/* Right: hero image and pills */}
-              <button
-                onClick={() => setSelectedProject(projects[0])}
-                className="text-left group cursor-pointer"
-              >
+              <div className="text-left group">
                 <div className="space-y-4">
                   <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
                     <Image
@@ -176,23 +175,26 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                   <p className="text-xs text-muted-foreground max-w-md">
                     {projects[0].description}
                   </p>
-                  {projects[0].demoPath && (
-                    <a href={projects[0].demoPath} className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
-                      View Demo →
-                    </a>
-                  )}
+                  <div className="flex gap-3">
+                    {projects[0].demoUrl && (
+                      <a href={projects[0].demoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
+                        View Demo →
+                      </a>
+                    )}
+                    {projects[0].repoUrl && (
+                      <a href={projects[0].repoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-muted-foreground hover:text-foreground text-xs font-medium">
+                        View Code →
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </button>
+              </div>
             </div>
 
             {/* Other projects grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.slice(1).map((project) => (
-                <button
-                  key={project.id}
-                  onClick={() => setSelectedProject(project)}
-                  className="text-left group cursor-pointer"
-                >
+                <div key={project.id} className="text-left group">
                   <div className="space-y-4">
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
                       <Image
@@ -214,14 +216,21 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                           </span>
                         ))}
                       </div>
-                      {project.demoPath && (
-                        <a href={project.demoPath} className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
-                          View Demo →
-                        </a>
-                      )}
+                      <div className="flex gap-3">
+                        {project.demoUrl && (
+                          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
+                            View Demo →
+                          </a>
+                        )}
+                        {project.repoUrl && (
+                          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-muted-foreground hover:text-foreground text-xs font-medium">
+                            View Code →
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </button>
+                </div>
               ))}
             </div>
           </div>

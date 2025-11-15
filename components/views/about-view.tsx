@@ -43,7 +43,6 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <button type="button" onClick={() => onNavigate?.("home")} className="text-muted-foreground hover:text-primary">Home</button>
               <button type="button" onClick={() => onNavigate?.("projects")} className="text-muted-foreground hover:text-primary">Projects</button>
               <button type="button" onClick={() => onNavigate?.("skills")} className="text-muted-foreground hover:text-primary">Skills</button>
-              <button type="button" onClick={() => onNavigate?.("others")} className="text-muted-foreground hover:text-primary">Others</button>
             </div>
           </div>
 

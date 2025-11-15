@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import HomeView from "@/components/views/home-view"
 import ProjectsView from "@/components/views/projects-view"
-import OthersView from "@/components/views/others-view"
 import AboutView from "@/components/views/about-view"
 import SkillsView from "@/components/views/skills-view"
 
@@ -12,7 +11,7 @@ export default function Home() {
 
   // Sync with URL hash so navigation is reliable and shareable
   useEffect(() => {
-    const allowed = new Set(["home", "projects", "others", "about", "skills"])
+    const allowed = new Set(["home", "projects", "about", "skills"])
     const applyFromHash = () => {
       const hash = typeof window !== "undefined" ? window.location.hash.replace("#", "") : ""
       if (allowed.has(hash)) setCurrentView(hash)
@@ -32,7 +31,6 @@ export default function Home() {
       <div className="w-full">
         {currentView === "home" && <HomeView onNavigate={handleNavigate} />}
         {currentView === "projects" && <ProjectsView onNavigate={handleNavigate} />}
-        {currentView === "others" && <OthersView onNavigate={handleNavigate} />}
         {currentView === "about" && <AboutView onNavigate={handleNavigate} />}
         {currentView === "skills" && <SkillsView onNavigate={handleNavigate} />}
       </div>

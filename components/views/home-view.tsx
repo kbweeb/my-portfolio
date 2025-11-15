@@ -47,12 +47,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 — SKILLS & TECHNOLOGIES
               </button>
               <button type="button"
-                onClick={() => onNavigate("others")}
-                className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
-              >
-                — OTHERS
-              </button>
-              <button type="button"
                 onClick={() => onNavigate("about")}
                 className="text-xs sm:text-sm font-medium text-primary transition-colors text-left"
               >
@@ -110,9 +104,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </button>
             <button type="button" onClick={() => onNavigate("skills")} className="hover:text-foreground transition-colors">
               Skills
-            </button>
-            <button type="button" onClick={() => onNavigate("others")} className="hover:text-foreground transition-colors">
-              Others
             </button>
             <button type="button" onClick={() => onNavigate("about")} className="hover:text-foreground transition-colors">
               About

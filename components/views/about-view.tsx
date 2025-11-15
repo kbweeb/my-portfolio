@@ -81,6 +81,17 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 <li>Testing and debugging to ensure accurate and reliable transaction processing.</li>
               </ul>
             </div>
+            <div className="p-5 rounded-lg border border-border bg-secondary/50">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <h4 className="font-semibold text-foreground">IoT Testing Intern</h4>
+                <span className="text-xs text-muted-foreground">IoT Network Hub Ghana · Jul 2024 – Sep 2024</span>
+              </div>
+              <ul className="mt-3 list-disc list-inside text-sm text-muted-foreground space-y-1">
+                <li>Performed device functionality tests on IoT modules using scripts and signal monitoring tools.</li>
+                <li>Documented bug reports and collaborated with firmware engineers for fixes.</li>
+                <li>Assisted in real-world deployment validation of IoT devices in field environments.</li>
+              </ul>
+            </div>
           </div>
 
           {/* Values Grid */}

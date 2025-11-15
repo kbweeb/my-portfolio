@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 
 interface Project {
@@ -11,6 +12,7 @@ interface Project {
   image: string
   tags: string[]
   features: string[]
+  demoPath?: string
 }
 
 const projects: Project[] = [
@@ -24,6 +26,7 @@ const projects: Project[] = [
     image: "/placeholder.jpg",
     tags: ["C++", "Encryption", "Security", "Banking"],
     features: ["User authentication", "Encrypted storage", "Transaction logs"],
+    demoPath: "/projects/encrypted-bank",
   },
   {
     id: 2,
@@ -35,6 +38,7 @@ const projects: Project[] = [
     image: "/placeholder.jpg",
     tags: ["C#", ".NET", "Python", "NLP", "AI"],
     features: ["Anime search", "Summaries", "Recommendations"],
+    demoPath: "/projects/anime-chatbot",
   },
   {
     id: 3,
@@ -46,6 +50,7 @@ const projects: Project[] = [
     image: "/placeholder.jpg",
     tags: ["C++", "Algorithms", "Simulation", "Modeling"],
     features: ["Configurable rules", "Visualization", "Fast iteration"],
+    demoPath: "/projects/cellular-automata",
   },
 ]
 
@@ -171,6 +176,11 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                   <p className="text-xs text-muted-foreground max-w-md">
                     {projects[0].description}
                   </p>
+                  {projects[0].demoPath && (
+                    <a href={projects[0].demoPath} className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
+                      View Demo →
+                    </a>
+                  )}
                 </div>
               </button>
             </div>
@@ -204,6 +214,11 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                           </span>
                         ))}
                       </div>
+                      {project.demoPath && (
+                        <a href={project.demoPath} className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
+                          View Demo →
+                        </a>
+                      )}
                     </div>
                   </div>
                 </button>

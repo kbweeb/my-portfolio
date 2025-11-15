@@ -2,6 +2,7 @@
 
 import { Cpu, Code2, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import ContactForm from "@/components/sections/contact-form"
 
 interface AboutViewProps {
   onNavigate?: (view: string) => void
@@ -80,13 +81,13 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
             ))}
           </div>
 
-          {/* CTA Section */}
-          <div className="bg-secondary border border-border rounded-lg p-8 space-y-4 mt-12">
-            <h3 className="text-2xl font-semibold text-foreground">Let's Build Something Great</h3>
-            <p className="text-muted-foreground">
-              Interested in collaborating or learning more? I'd love to hear from you.
-            </p>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Get in Touch</Button>
+          {/* Get in Touch Section from NEW UI with OLD functionality */}
+          <div className="bg-secondary border border-border rounded-lg p-8 space-y-6 mt-12">
+            <div>
+              <h3 className="text-2xl font-semibold text-foreground">Get in Touch</h3>
+              <p className="text-muted-foreground">Send me a message — it opens your email with a prefilled draft.</p>
+            </div>
+            <ContactForm toEmail="kbweeb.01@gmail.com" />
           </div>
         </div>
       </div>

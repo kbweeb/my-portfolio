@@ -43,7 +43,7 @@ const projects: Project[] = [
     features: ["Anime search", "Summaries", "Recommendations"],
     demoPath: undefined,
     image: "/projects/anime-chatbot.jpg",
-    demoUrl: "https://anime-chatbot-api.vercel.app/",
+    demoUrl: "https://anime-chatbot-api.vercel.app/web/",
     repoUrl: "https://github.com/kbweeb/anime-chatbot-api",
   },
   {

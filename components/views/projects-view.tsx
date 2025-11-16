@@ -39,7 +39,6 @@ const projects: Project[] = [
       "An AI-powered chatbot that answers questions about anime series, characters, and recommendations.",
     fullDescription:
       "Built with C# (.NET) and Python, integrated with an NLP API (like GPT) to handle natural language queries. Supports searching anime databases, providing summaries, and suggesting similar shows based on user preferences.",
-    image: "/placeholder.jpg",
     tags: ["C#", ".NET", "Python", "NLP", "AI"],
     features: ["Anime search", "Summaries", "Recommendations"],
     demoPath: undefined,

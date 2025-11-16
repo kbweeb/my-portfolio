@@ -27,3 +27,6 @@ yarn-error.log*
 next-env.d.ts
 \Cellular-Automata/
 \Encrypted-Bank-System/
+# dotnet build artifacts
+**/bin/
+**/obj/

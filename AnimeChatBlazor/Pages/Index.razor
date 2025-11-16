@@ -1,0 +1,120 @@
+﻿@page "/"
+@using AnimeChatBlazor.Services
+@inject ChatService Chat
+
+<PageTitle>Anime Chat</PageTitle>
+
+<div class="layout">
+    <aside class="sidebar">
+        <button class="new-chat" @onclick="NewChat">+ New chat</button>
+        <ul class="history">
+            @foreach (var s in Sessions)
+            {
+                <li class="history-item @(ReferenceEquals(s, CurrentSession) ? "active" : null)" @onclick="(() => SelectSession(s))">
+                    @s.Title
+                </li>
+            }
+        </ul>
+    </aside>
+    <main class="chat">
+        <div class="messages" @ref="MessagesDiv">
+            @foreach (var m in CurrentSession.Messages)
+            {
+                <div class="msg @(m.Role == "user" ? "user" : "assistant")">@m.Content</div>
+            }
+            @if (IsSending)
+            {
+                <div class="msg assistant">Thinking…</div>
+            }
+        </div>
+        <form class="composer" @onsubmit="SendAsync">
+            <textarea @bind="Input" placeholder="Message Anime AI" rows="3"></textarea>
+            <button type="submit" disabled="@IsSending">Send</button>
+        </form>
+    </main>
+    <style>
+        .layout{display:grid;grid-template-columns:260px 1fr;height:calc(100vh - 2rem);gap:1rem;padding:1rem;box-sizing:border-box}
+        .sidebar{border:1px solid #ddd;border-radius:8px;padding:12px;display:flex;flex-direction:column}
+        .new-chat{margin-bottom:8px}
+        .history{list-style:none;margin:0;padding:0;overflow:auto}
+        .history-item{padding:6px 8px;border-radius:6px;cursor:pointer}
+        .history-item.active,.history-item:hover{background:#f3f3f3}
+        .chat{border:1px solid #ddd;border-radius:8px;display:flex;flex-direction:column;min-height:0}
+        .messages{flex:1;overflow:auto;padding:16px}
+        .msg{max-width:800px;margin:8px 0;padding:10px 12px;border-radius:10px}
+        .msg.user{background:#e6f0ff;align-self:flex-end}
+        .msg.assistant{background:#f6f6f6;align-self:flex-start}
+        .composer{display:grid;grid-template-columns:1fr auto;gap:8px;padding:8px;border-top:1px solid #eee}
+        textarea{resize:vertical}
+    </style>
+</div>
+
+@code {
+    private class ChatSession
+    {
+        public string Title { get; set; } = "New chat";
+        public List<ChatMessage> Messages { get; } = new();
+    }
+
+    private List<ChatSession> Sessions = new() { new ChatSession() };
+    private ChatSession CurrentSession => Sessions[SelectedIndex];
+    private int SelectedIndex { get; set; } = 0;
+    private string? Input { get; set; }
+    private bool IsSending { get; set; }
+    private ElementReference MessagesDiv;
+
+    private void NewChat()
+    {
+        Sessions.Insert(0, new ChatSession());
+        SelectedIndex = 0;
+    }
+
+    private void SelectSession(ChatSession s)
+    {
+        SelectedIndex = Sessions.IndexOf(s);
+    }
+
+    private async Task SendAsync()
+    {
+        if (string.IsNullOrWhiteSpace(Input) || IsSending)
+            return;
+
+        var text = Input;
+        Input = string.Empty;
+        CurrentSession.Messages.Add(new ChatMessage("user", text));
+        IsSending = true;
+        StateHasChanged();
+
+        try
+        {
+            var reply = await Chat.SendAsync(CurrentSession.Messages, text);
+            CurrentSession.Messages.Add(new ChatMessage("assistant", reply));
+            if (CurrentSession.Messages.Count == 2)
+            {
+                CurrentSession.Title = text.Length > 32 ? text.Substring(0, 32) + "…" : text;
+            }
+        }
+        catch (Exception ex)
+        {
+            CurrentSession.Messages.Add(new ChatMessage("assistant", "Error contacting AI provider."));
+        }
+        finally
+        {
+            IsSending = false;
+            await Task.Delay(10);
+            await ScrollToBottomAsync();
+            StateHasChanged();
+        }
+    }
+
+    private async Task ScrollToBottomAsync()
+    {
+        try
+        {
+            await js.InvokeVoidAsync("AnimeChat.scrollToBottom", MessagesDiv);
+        }
+        catch { }
+    }
+
+    [Inject] private Microsoft.JSInterop.IJSRuntime js { get; set; } = default!;
+}

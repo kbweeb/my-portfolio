@@ -25,7 +25,7 @@ const projects: Project[] = [
       "A secure banking system built with C++ featuring encryption protocols, user authentication, and transaction management.",
     fullDescription:
       "A secure banking system built with C++ featuring encryption protocols, user authentication, and transaction management for safe financial operations.",
-    image: "https://s.wordpress.com/mshots/v1/https://encrypted-bank-system.vercel.app/web/?w=1200",
+    image: "/projects/encrypted-bank.jpg",
     tags: ["C++", "Encryption", "Security", "Banking"],
     features: ["User authentication", "Encrypted storage", "Transaction logs"],
     demoPath: undefined,
@@ -43,7 +43,7 @@ const projects: Project[] = [
     tags: ["C#", ".NET", "Python", "NLP", "AI"],
     features: ["Anime search", "Summaries", "Recommendations"],
     demoPath: undefined,
-    image: "https://s.wordpress.com/mshots/v1/https://anime-chatbot-api.vercel.app/?w=1200",
+    image: "/projects/anime-chatbot.jpg",
     demoUrl: "https://anime-chatbot-api.vercel.app/",
     repoUrl: "https://github.com/kbweeb/anime-chatbot-api",
   },
@@ -54,7 +54,7 @@ const projects: Project[] = [
       "A 2D cellular automaton simulator with adjustable rulesets for modeling complex systems and emergent patterns.",
     fullDescription:
       "A 2D cellular automaton simulator with adjustable rulesets for modeling complex systems and visualizing emergent patterns in computational biology.",
-    image: "https://s.wordpress.com/mshots/v1/https://cellular-automata-cyan.vercel.app/web/?w=1200",
+    image: "/projects/cellular-automata.jpg",
     tags: ["C++", "Algorithms", "Simulation", "Modeling"],
     features: ["Configurable rules", "Visualization", "Fast iteration"],
     demoPath: undefined,

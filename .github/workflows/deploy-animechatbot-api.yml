@@ -1,0 +1,33 @@
+name: Deploy AnimeChatbot API to Azure App Service
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'anime-chatbot-api/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore
+        run: dotnet restore anime-chatbot-api/AnimeChatbotApi.csproj
+
+      - name: Publish API
+        run: dotnet publish anime-chatbot-api/AnimeChatbotApi.csproj -c Release -o ./publish/animechatbotapi
+
+      - name: Deploy to Azure WebApp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ secrets.AZURE_API_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_API_PUBLISH_PROFILE }}
+          package: ./publish/animechatbotapi

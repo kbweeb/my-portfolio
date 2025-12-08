@@ -73,14 +73,18 @@ export default function Footer() {
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">Connect</h4>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://github.com/kbweeb"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-secondary rounded-lg hover:bg-primary/20 hover:text-primary transition-all"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/kwabena-boateng-gyau-baffour-00067a308/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-secondary rounded-lg hover:bg-primary/20 hover:text-primary transition-all"
                 aria-label="LinkedIn"
               >

@@ -1,0 +1,53 @@
+name: CI - Prepare PR (update pnpm lock and validate)
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'hooks/**'
+
+permissions:
+  contents: write
+
+jobs:
+  update-lock-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Corepack and setup pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.22.0 --activate
+
+      - name: Install dependencies (refresh lockfile)
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Commit updated lockfile if changed
+        run: |
+          if git diff --quiet --exit-code pnpm-lock.yaml; then
+            echo "No changes to pnpm-lock.yaml"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add pnpm-lock.yaml
+            git commit -m "ci: refresh pnpm-lock.yaml on PR"
+            git push
+          fi
+        shell: bash

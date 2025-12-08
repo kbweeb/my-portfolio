@@ -91,7 +91,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="mailto:kbweeb.01@gmail.com"
                 className="p-2 bg-secondary rounded-lg hover:bg-primary/20 hover:text-primary transition-all"
                 aria-label="Email"
               >

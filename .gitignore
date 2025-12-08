@@ -7,6 +7,20 @@
 /.next/
 /out/
 
+# static exports & publish artifacts
+/docs/
+/publish/
+
+# legacy side projects (exclude from portfolio repo)
+/AnimeChatBlazor/
+/server/
+/anime-chatbot-api/
+/Cellular-Automata/
+/Encrypted-Bank-System/
+
+# archives
+anime-chatbot-api.zip
+
 # production
 /build
 

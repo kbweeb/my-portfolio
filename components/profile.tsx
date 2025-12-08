@@ -45,21 +45,25 @@ export default function Profile({ onNavigate }: ProfileProps) {
             <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-4">Connect</p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://github.com/kbweeb"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-secondary rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/kwabena-boateng-gyau-baffour-00067a308/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-secondary rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="mailto:kbweeb.01@gmail.com"
                 className="p-2 bg-secondary rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
                 aria-label="Email"
               >

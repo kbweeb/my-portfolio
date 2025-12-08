@@ -65,6 +65,17 @@ export default function About() {
             </p>
           </div>
 
+          {/* Contact */}
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold">Contact</h3>
+            <p className="text-muted-foreground">
+              Phone: <a className="text-primary hover:underline" href="tel:+233209179715">+233 209179715</a>
+            </p>
+            <p className="text-muted-foreground">
+              Email: <a className="text-primary hover:underline" href="mailto:kbweeb.01@gmail.com">kbweeb.01@gmail.com</a>
+            </p>
+          </div>
+
           {/* Values Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
             {values.map((value) => (

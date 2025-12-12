@@ -1,6 +1,6 @@
 "use client"
 
-import { Cpu, Code2, Lightbulb, Phone } from "lucide-react"
+import { Cpu, Code2, Lightbulb, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ContactForm from "@/components/sections/contact-form"
 
@@ -114,7 +114,7 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               <p className="text-muted-foreground">Send me a message — it opens your email with a prefilled draft.</p>
             </div>
             <ContactForm toEmail="kbweeb.01@gmail.com" />
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-6">
               <a
                 href="tel:+233209179715"
                 className="inline-flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors"
@@ -122,6 +122,14 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
               >
                 <Phone className="w-4 h-4" />
                 +233 20 917 9715
+              </a>
+              <a
+                href="mailto:Kbweeb.01@gmail.com"
+                className="inline-flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors"
+                aria-label="Email Kwabena"
+              >
+                <Mail className="w-4 h-4" />
+                Kbweeb.01@gmail.com
               </a>
             </div>
           </div>

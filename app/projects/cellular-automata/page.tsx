@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { sitePath } from "@/lib/site-path"
 
 const N = 40
 const M = 40
@@ -63,9 +64,11 @@ export default function CellularAutomataDemo() {
   return (
     <div className="w-full min-h-screen bg-background">
       <div className="px-6 md:px-16 py-10 md:py-16 max-w-5xl mx-auto">
-        <button onClick={() => (window.location.hash = "projects")} className="text-primary hover:text-primary/80">← Back</button>
+        <a href={`${sitePath("/")}#projects`} className="text-primary hover:text-primary/80">← Back to Projects</a>
         <h1 className="text-3xl md:text-4xl font-bold mt-4">Cellular Automata — Demo</h1>
-        <p className="text-sm text-muted-foreground mt-2">Conway's Game of Life: click cells to toggle, then run.</p>
+        <p className="text-sm text-muted-foreground mt-2">
+          Conway&apos;s Game of Life in the browser. The repo also includes a Python/matplotlib simulator with custom rules.
+        </p>
 
         <div className="flex gap-2 mt-4">
           <button onClick={() => setRunning((s) => !s)} className="px-3 py-2 bg-primary text-background rounded">

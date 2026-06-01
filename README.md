@@ -33,4 +33,19 @@ npm start
 
 ### Notes
 - Navigation uses an in‑page view switcher with URL hash (e.g., `/#projects`).
-- If you prefer real routes (`/projects`, `/about`), create pages and use Next.js routing.
+- Project demos also live at `/projects/encrypted-bank/` and `/projects/anime-chatbot/`.
+
+### Deploy to GitHub Pages
+
+1. Push to `main` — the workflow publishes the `out/` folder to the `gh-pages` branch.
+2. In the repo on GitHub: **Settings → Pages → Build and deployment → Branch** = `gh-pages`, folder `/ (root)`.
+3. Site URL: `https://kbweeb.github.io/my-portfolio/` (project pages base path matches the repo name).
+
+Optional env at build time (set in the workflow):
+
+- `NEXT_PUBLIC_BASE_PATH` — `/my-portfolio` on GitHub Pages
+- `NEXT_PUBLIC_CHATBOT_API` — anime API base URL (default: Vercel deployment)
+
+### Anime chatbot API on Vercel
+
+If `anime-chatbot-api.vercel.app` shows a v0 placeholder, copy `deploy/anime-chatbot-api/vercel.json` into the [anime-chatbot-api](https://github.com/kbweeb/anime-chatbot-api) repo, reconnect the Vercel project to that repository, and redeploy. See `deploy/anime-chatbot-api/README.md`.

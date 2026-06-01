@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import { sitePath } from "@/lib/site-path"
 
 type Tx = { id: string; type: "deposit" | "withdraw" | "transfer"; amount: number; note?: string; date: string }
 type Account = { username: string; balance: number; txs: Tx[] }
@@ -79,9 +80,11 @@ export default function EncryptedBankDemo() {
   return (
     <div className="w-full min-h-screen bg-background">
       <div className="px-6 md:px-16 py-10 md:py-16 max-w-5xl mx-auto">
-        <button onClick={() => (window.location.hash = "projects")} className="text-primary hover:text-primary/80">← Back</button>
+        <a href={`${sitePath("/")}#projects`} className="text-primary hover:text-primary/80">← Back to Projects</a>
         <h1 className="text-3xl md:text-4xl font-bold mt-4">Encrypted Bank System — Demo</h1>
-        <p className="text-sm text-muted-foreground mt-2">In-browser prototype: create an account, then deposit/withdraw. Data stored locally.</p>
+        <p className="text-sm text-muted-foreground mt-2">
+          Browser prototype (localStorage). The production implementation is C++ with XOR-encrypted file storage — see the GitHub repo.
+        </p>
 
         <div className="grid md:grid-cols-2 gap-6 mt-8">
           <div className="p-5 rounded-lg border border-border bg-secondary/50">

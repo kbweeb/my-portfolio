@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { useState } from "react"
+import { sitePath } from "@/lib/site-path"
 
 interface Project {
   id: number
@@ -15,6 +15,7 @@ interface Project {
   demoPath?: string
   demoUrl?: string
   repoUrl?: string
+  demoNote?: string
 }
 
 const projects: Project[] = [
@@ -22,45 +23,83 @@ const projects: Project[] = [
     id: 1,
     title: "Encrypted Bank System",
     description:
-      "A secure banking system built with C++ featuring encryption protocols, user authentication, and transaction management.",
+      "C++ console app with XOR-encrypted account storage and PIN auth. Includes a browser prototype for the same flows.",
     fullDescription:
-      "A secure banking system built with C++ featuring encryption protocols, user authentication, and transaction management for safe financial operations.",
+      "Production logic is implemented in C++ (encrypted file storage, PIN-protected admin). The linked demo is a static browser prototype using localStorage so visitors can try deposits, withdrawals, and transfers without installing anything.",
     image: "/projects/encrypted-bank.jpg",
     tags: ["C++", "Encryption", "Security", "Banking"],
-    features: ["User authentication", "Encrypted storage", "Transaction logs"],
-    demoPath: undefined,
+    features: ["Account + PIN", "Encrypted persistence (C++)", "Browser demo (prototype)"],
+    demoPath: "/projects/encrypted-bank/",
     demoUrl: "https://encrypted-bank-system.vercel.app/web/",
     repoUrl: "https://github.com/kbweeb/Encrypted-Bank-System",
+    demoNote: "Browser prototype — full C++ implementation in the repo.",
   },
   {
     id: 2,
     title: "AI Chatbot for Anime Queries",
     description:
-      "An AI-powered chatbot that answers questions about anime series, characters, and recommendations.",
+      "Anime Q&A chatbot with a .NET / serverless API (Groq/OpenAI-compatible) and a portfolio-integrated demo UI.",
     fullDescription:
-      "Built with C# (.NET) and Python, integrated with an NLP API (like GPT) to handle natural language queries. Supports searching anime databases, providing summaries, and suggesting similar shows based on user preferences.",
-    tags: ["C#", ".NET", "Python", "NLP", "AI"],
-    features: ["Anime search", "Summaries", "Recommendations"],
-    demoPath: undefined,
+      "Backend exposes POST /api/chat with natural-language answers about anime. The portfolio hosts an embedded demo; the standalone repo includes a vanilla web UI and Vercel serverless handlers.",
+    tags: ["C#", ".NET", "NLP", "AI"],
+    features: ["Anime Q&A", "LLM-backed replies", "Embedded + standalone UI"],
+    demoPath: "/projects/anime-chatbot/",
+    demoUrl: "https://anime-chatbot-api.vercel.app/web/",
     image: "/projects/anime-chatbot.jpg",
-    demoUrl: "https://anime-chatbot-api.vercel.app",
     repoUrl: "https://github.com/kbweeb/anime-chatbot-api",
+    demoNote: "Uses live API when available; offline-style fallback otherwise.",
   },
   {
     id: 3,
     title: "Cellular Automata Simulator",
     description:
-      "A 2D cellular automaton simulator with adjustable rulesets for modeling complex systems and emergent patterns.",
+      "Python grid simulator (matplotlib) plus Conway's Game of Life in the browser for quick visualization.",
     fullDescription:
-      "A 2D cellular automaton simulator with adjustable rulesets for modeling complex systems and visualizing emergent patterns in computational biology.",
+      "The repository centers on a configurable Python cellular automaton engine. The public demo is a client-only Game of Life page (run, pause, step, toroidal edges) hosted from the repo's web/ folder.",
     image: "/projects/cellular-automata.jpg",
-    tags: ["C++", "Algorithms", "Simulation", "Modeling"],
-    features: ["Configurable rules", "Visualization", "Fast iteration"],
-    demoPath: undefined,
+    tags: ["Python", "Algorithms", "Simulation", "Visualization"],
+    features: ["Python engine", "Conway demo in browser", "Adjustable speed & grid"],
+    demoPath: "/projects/cellular-automata/",
     demoUrl: "https://cellular-automata-cyan.vercel.app/web/",
     repoUrl: "https://github.com/kbweeb/Cellular-Automata",
+    demoNote: "Live demo is the browser Game of Life — run Python script locally for the full simulator.",
   },
 ]
+
+function projectDemoHref(project: Project): string | undefined {
+  if (project.demoPath) return sitePath(project.demoPath)
+  return project.demoUrl
+}
+
+function ProjectLinks({ project }: { project: Project }) {
+  const demoHref = projectDemoHref(project)
+  return (
+    <div className="flex flex-wrap gap-3 items-center">
+      {demoHref && (
+        <a
+          href={demoHref}
+          {...(project.demoPath ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+          className="inline-block text-primary hover:text-primary/80 text-xs font-medium"
+        >
+          View Demo →
+        </a>
+      )}
+      {project.repoUrl && (
+        <a
+          href={project.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-muted-foreground hover:text-foreground text-xs font-medium"
+        >
+          View Code →
+        </a>
+      )}
+      {project.demoNote && (
+        <span className="text-[11px] text-muted-foreground w-full">{project.demoNote}</span>
+      )}
+    </div>
+  )
+}
 
 interface ProjectsViewProps {
   onNavigate?: (view: string) => void
@@ -81,7 +120,6 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
               ← Back to Projects
             </button>
 
-            {/* Project header */}
             <div className="space-y-4">
               <h2 className="text-4xl font-bold text-foreground uppercase">{selectedProject.title}</h2>
               <div className="flex gap-3 flex-wrap">
@@ -96,7 +134,6 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
               </div>
             </div>
 
-            {/* Project image */}
             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-secondary border border-border">
               <Image
                 src={selectedProject.image || "/placeholder.svg"}
@@ -106,12 +143,12 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
               />
             </div>
 
-            {/* Description */}
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
               {selectedProject.fullDescription}
             </p>
 
-            {/* Features */}
+            <ProjectLinks project={selectedProject} />
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-8">
               {selectedProject.features.map((feature, idx) => (
                 <div key={idx} className="p-4 bg-secondary rounded-lg border border-border text-center">
@@ -122,7 +159,6 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
           </div>
         ) : (
           <div className="space-y-12">
-            {/* Hero project card */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Kwabena Boateng</h2>
@@ -143,7 +179,7 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                   >
                     — SKILLS & TECHNOLOGIES
                   </button>
-                  
+
                   <button
                     type="button"
                     onClick={() => (onNavigate ? onNavigate("about") : (window.location.hash = "about"))}
@@ -154,7 +190,6 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                 </div>
               </div>
 
-              {/* Right: hero image and pills */}
               <div className="text-left group">
                 <div className="space-y-4">
                   <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
@@ -172,26 +207,12 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                       </span>
                     ))}
                   </div>
-                  <p className="text-xs text-muted-foreground max-w-md">
-                    {projects[0].description}
-                  </p>
-                  <div className="flex gap-3">
-                    {projects[0].demoUrl && (
-                      <a href={projects[0].demoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
-                        View Demo →
-                      </a>
-                    )}
-                    {projects[0].repoUrl && (
-                      <a href={projects[0].repoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-muted-foreground hover:text-foreground text-xs font-medium">
-                        View Code →
-                      </a>
-                    )}
-                  </div>
+                  <p className="text-xs text-muted-foreground max-w-md">{projects[0].description}</p>
+                  <ProjectLinks project={projects[0]} />
                 </div>
               </div>
             </div>
 
-            {/* Other projects grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.slice(1).map((project) => (
                 <div key={project.id} className="text-left group">
@@ -211,23 +232,15 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
                       <p className="text-sm text-muted-foreground">{project.description}</p>
                       <div className="flex gap-2 flex-wrap pt-1">
                         {project.tags.map((tag) => (
-                          <span key={tag} className="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+                          <span
+                            key={tag}
+                            className="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full"
+                          >
                             {tag}
                           </span>
                         ))}
                       </div>
-                      <div className="flex gap-3">
-                        {project.demoUrl && (
-                          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
-                            View Demo →
-                          </a>
-                        )}
-                        {project.repoUrl && (
-                          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-muted-foreground hover:text-foreground text-xs font-medium">
-                            View Code →
-                          </a>
-                        )}
-                      </div>
+                      <ProjectLinks project={project} />
                     </div>
                   </div>
                 </div>
@@ -237,7 +250,6 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
         )}
       </div>
 
-      {/* Footer */}
       <footer className="border-t border-border px-6 md:px-16 py-8 mt-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>&copy; 2025 Kwabena Boateng Gyau Baffour. All rights reserved.</p>

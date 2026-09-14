@@ -36,9 +36,9 @@ function Particles({ count = 5000 }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.015}
-        color="#222222"
+        color="#1e293b"
         transparent
-        opacity={0.4}
+        opacity={0.3}
         sizeAttenuation
       />
     </points>
@@ -87,7 +87,7 @@ function Line({ speed, pos, direction, length }: any) {
   return (
     <mesh ref={mesh} position={pos}>
       <boxGeometry args={[length, 0.005, 0.005]} />
-      <meshBasicMaterial color="#FF0000" transparent opacity={0.1} />
+      <meshBasicMaterial color="#ef4444" transparent opacity={0.15} />
     </mesh>
   )
 }

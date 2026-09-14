@@ -3,6 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Github, Linkedin } from "lucide-react"
+import TechnicalBackground from "@/components/ui/technical-background"
+import EngineeringRig from "@/components/ui/engineering-rig"
 
 interface HomeViewProps {
   onNavigate: (view: string) => void
@@ -10,8 +12,9 @@ interface HomeViewProps {
 
 export default function HomeView({ onNavigate }: HomeViewProps) {
   return (
-    <div className="w-full min-h-[90vh] flex items-center bg-background py-20">
-      <div className="px-6 md:px-16 w-full">
+    <div className="w-full min-h-[90vh] flex items-center py-20 relative overflow-hidden">
+      <TechnicalBackground />
+      <div className="px-6 md:px-16 w-full relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <span className="text-primary font-mono text-sm tracking-widest">01. /home</span>
@@ -46,17 +49,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </div>
 
-            {/* Right content - Abstract FIG marker or image */}
-            <div className="lg:w-1/3 w-full">
-               <div className="relative group">
-                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                 <div className="relative aspect-[3/4] bg-secondary border border-border overflow-hidden">
-                    <Image src="/profile.jpg" alt="Kwabena Boateng" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
-                 </div>
-                 <div className="mt-4 font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
-                   FIG. 1 — SYSTEM OPERATOR [KB-2027]
-                 </div>
-               </div>
+            {/* Right content - Virtual Engineering Rig */}
+            <div className="lg:w-1/2 w-full h-[400px] lg:h-[500px]">
+               <EngineeringRig />
             </div>
           </div>
         </div>

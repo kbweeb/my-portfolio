@@ -32,7 +32,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <div className="max-w-xl space-y-6">
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-light">
                   Passionate about building robust systems and interactive media. Currently exploring innovative 
-                  solutions in software engineering and IoT at KNUST, Ghana.
+                  solutions in software engineering and IoT at KNUST, Ghana. Expected graduation: November 2027.
                 </p>
                 
                 <div className="pt-4 flex flex-wrap gap-4">

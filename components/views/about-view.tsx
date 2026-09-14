@@ -61,6 +61,17 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
                 Based in Accra, Ghana.
               </p>
             </div>
+
+            <div className="pt-4">
+              <a
+                href="tel:+233209179715"
+                className="inline-flex items-center gap-2 text-sm text-foreground hover:text-primary transition-colors font-mono"
+                aria-label="Call Kwabena"
+              >
+                <Phone className="w-4 h-4 text-primary" />
+                +233 20 917 9715
+              </a>
+            </div>
             
             <div className="mt-8">
                <ContactForm toEmail="kbweeb.01@gmail.com" />

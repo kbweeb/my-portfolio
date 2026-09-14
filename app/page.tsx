@@ -5,7 +5,6 @@ import { sitePath } from "@/lib/site-path"
 import Image from "next/image"
 import Link from "next/link"
 import { Github, Linkedin, Terminal as TerminalIcon } from "lucide-react"
-
 import HomeView from "@/components/views/home-view"
 import ProjectsView from "@/components/views/projects-view"
 import AboutView from "@/components/views/about-view"

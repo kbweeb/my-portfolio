@@ -94,7 +94,7 @@
                 CurrentSession.Title = text.Length > 32 ? text.Substring(0, 32) + "…" : text;
             }
         }
-        catch
+        catch (Exception ex)
         {
             CurrentSession.Messages.Add(new ChatMessage("assistant", "Error contacting AI provider."));
         }

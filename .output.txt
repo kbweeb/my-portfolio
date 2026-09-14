@@ -1,0 +1,169 @@
+Command finished with exit code 0.
+Command output:
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/4/2026  11:33 PM                bin                                                                  
+d-----          9/4/2026  11:36 PM                obj                                                                  
+-a----          9/4/2026  11:35 PM            215 AnimeChatbotApi.csproj                                               
+-a----          9/4/2026  11:20 PM            809 Program.cs                                                           
+-a----          9/4/2026  11:20 PM           1542 README.md                                                            
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\bin
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/4/2026  11:36 PM                Debug                                                                
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\bin\Debug
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/4/2026  11:33 PM                net7.0                                                               
+d-----          9/4/2026  11:36 PM                net9.0                                                               
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\bin\Debug\net7.0
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          9/4/2026  11:33 PM            437 AnimeChatbotApi.deps.json                                            
+-a----          9/4/2026  11:33 PM           9728 AnimeChatbotApi.dll                                                  
+-a----          9/4/2026  11:33 PM         157696 AnimeChatbotApi.exe                                                  
+-a----          9/4/2026  11:33 PM          20508 AnimeChatbotApi.pdb                                                  
+-a----          9/4/2026  11:33 PM            416 AnimeChatbotApi.runtimeconfig.json                                   
+-a----          9/4/2026  11:33 PM             51 AnimeChatbotApi.staticwebassets.endpoints.json                       
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\bin\Debug\net9.0
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          9/4/2026  11:36 PM            437 AnimeChatbotApi.deps.json                                            
+-a----          9/4/2026  11:36 PM           9216 AnimeChatbotApi.dll                                                  
+-a----          9/4/2026  11:36 PM         156160 AnimeChatbotApi.exe                                                  
+-a----          9/4/2026  11:36 PM          20952 AnimeChatbotApi.pdb                                                  
+-a----          9/4/2026  11:36 PM            416 AnimeChatbotApi.runtimeconfig.json                                   
+-a----          9/4/2026  11:36 PM             51 AnimeChatbotApi.staticwebassets.endpoints.json                       
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/4/2026  11:36 PM                Debug                                                                
+-a----          9/4/2026  11:36 PM           3305 AnimeChatbotApi.csproj.nuget.dgspec.json                             
+-a----          9/4/2026  11:33 PM           1302 AnimeChatbotApi.csproj.nuget.g.props                                 
+-a----          9/4/2026  11:33 PM            150 AnimeChatbotApi.csproj.nuget.g.targets                               
+-a----          9/4/2026  11:36 PM           3180 project.assets.json                                                  
+-a----          9/4/2026  11:36 PM            778 project.nuget.cache                                                  
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj\Debug
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/4/2026  11:33 PM                net7.0                                                               
+d-----          9/4/2026  11:36 PM                net9.0                                                               
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj\Debug\net7.0
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/4/2026  11:33 PM                ref                                                                  
+d-----          9/4/2026  11:33 PM                refint                                                               
+d-----          9/4/2026  11:33 PM                staticwebassets                                                      
+-a----          9/4/2026  11:33 PM            198 .NETCoreApp,Version=v7.0.AssemblyAttributes.cs                       
+-a----          9/4/2026  11:33 PM            978 AnimeChatbotApi.AssemblyInfo.cs                                      
+-a----          9/4/2026  11:33 PM             66 AnimeChatbotApi.AssemblyInfoInputs.cache                             
+-a----          9/4/2026  11:33 PM            228 AnimeChatbotApi.assets.cache                                         
+-a----          9/4/2026  11:33 PM             66 AnimeChatbotApi.csproj.CoreCompileInputs.cache                       
+-a----          9/4/2026  11:33 PM           3111 AnimeChatbotApi.csproj.FileListAbsolute.txt                          
+-a----          9/4/2026  11:33 PM           9728 AnimeChatbotApi.dll                                                  
+-a----          9/4/2026  11:33 PM           1182 AnimeChatbotApi.GeneratedMSBuildEditorConfig.editorconfig            
+-a----          9/4/2026  11:33 PM             66 AnimeChatbotApi.genruntimeconfig.cache                               
+-a----          9/4/2026  11:33 PM            642 AnimeChatbotApi.GlobalUsings.g.cs                                    
+-a----          9/4/2026  11:33 PM              0 AnimeChatbotApi.MvcApplicationPartsAssemblyInfo.cache                
+-a----          9/4/2026  11:33 PM          20508 AnimeChatbotApi.pdb                                                  
+-a----          9/4/2026  11:33 PM         157696 apphost.exe                                                          
+-a----          9/4/2026  11:33 PM            369 rjsmcshtml.dswa.cache.json                                           
+-a----          9/4/2026  11:33 PM            369 rjsmrazor.dswa.cache.json                                            
+-a----          9/4/2026  11:33 PM             51 staticwebassets.build.endpoints.json                                 
+-a----          9/4/2026  11:33 PM            233 staticwebassets.build.json                                           
+-a----          9/4/2026  11:33 PM             44 staticwebassets.build.json.cache                                     
+-a----          9/4/2026  11:33 PM              0 swae.build.ex.cache                                                  
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj\Debug\net7.0\ref
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          9/4/2026  11:33 PM           6656 AnimeChatbotApi.dll                                                  
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj\Debug\net7.0\refint
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          9/4/2026  11:33 PM           6656 AnimeChatbotApi.dll                                                  
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj\Debug\net9.0
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----          9/4/2026  11:36 PM                ref                                                                  
+d-----          9/4/2026  11:36 PM                refint                                                               
+d-----          9/4/2026  11:36 PM                staticwebassets                                                      
+-a----          9/4/2026  11:36 PM            198 .NETCoreApp,Version=v9.0.AssemblyAttributes.cs                       
+-a----          9/4/2026  11:36 PM            978 AnimeChatbotApi.AssemblyInfo.cs                                      
+-a----          9/4/2026  11:36 PM             66 AnimeChatbotApi.AssemblyInfoInputs.cache                             
+-a----          9/4/2026  11:36 PM            228 AnimeChatbotApi.assets.cache                                         
+-a----          9/4/2026  11:36 PM             66 AnimeChatbotApi.csproj.CoreCompileInputs.cache                       
+-a----          9/4/2026  11:36 PM           2929 AnimeChatbotApi.csproj.FileListAbsolute.txt                          
+-a----          9/4/2026  11:36 PM           9216 AnimeChatbotApi.dll                                                  
+-a----          9/4/2026  11:36 PM           1168 AnimeChatbotApi.GeneratedMSBuildEditorConfig.editorconfig            
+-a----          9/4/2026  11:36 PM             66 AnimeChatbotApi.genruntimeconfig.cache                               
+-a----          9/4/2026  11:36 PM            642 AnimeChatbotApi.GlobalUsings.g.cs                                    
+-a----          9/4/2026  11:36 PM              0 AnimeChatbotApi.MvcApplicationPartsAssemblyInfo.cache                
+-a----          9/4/2026  11:36 PM          20952 AnimeChatbotApi.pdb                                                  
+-a----          9/4/2026  11:36 PM         156160 apphost.exe                                                          
+-a----          9/4/2026  11:36 PM            374 rjsmcshtml.dswa.cache.json                                           
+-a----          9/4/2026  11:36 PM            374 rjsmrazor.dswa.cache.json                                            
+-a----          9/4/2026  11:36 PM             51 staticwebassets.build.endpoints.json                                 
+-a----          9/4/2026  11:36 PM            233 staticwebassets.build.json                                           
+-a----          9/4/2026  11:36 PM             44 staticwebassets.build.json.cache                                     
+-a----          9/4/2026  11:36 PM              0 swae.build.ex.cache                                                  
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj\Debug\net9.0\ref
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          9/4/2026  11:36 PM           6144 AnimeChatbotApi.dll                                                  
+
+
+    Directory: C:\Users\metak\.vscode\projects\my-portfolio\anime-chatbot-api\obj\Debug\net9.0\refint
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+-a----          9/4/2026  11:36 PM           6144 AnimeChatbotApi.dll

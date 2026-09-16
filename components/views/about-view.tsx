@@ -28,100 +28,114 @@ export default function AboutView({ onNavigate }: AboutViewProps) {
   ]
 
   return (
-    <div className="w-full min-h-screen bg-background">
-      <div className="px-6 md:px-16 py-16 md:py-24">
-        <div className="max-w-4xl space-y-12">
-          {/* Header */}
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">About Me</h2>
-            <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
-              I'm a dedicated Computer Engineering student with a passion for creating innovative solutions through
-              code. My journey in technology has equipped me with a diverse skill set and a problem-solving mindset.
-            </p>
-            {/* Quick nav */}
-            <div className="flex gap-4 text-sm pt-2">
-              <button type="button" onClick={() => onNavigate?.("home")} className="text-muted-foreground hover:text-primary">Home</button>
-              <button type="button" onClick={() => onNavigate?.("projects")} className="text-muted-foreground hover:text-primary">Projects</button>
-              <button type="button" onClick={() => onNavigate?.("skills")} className="text-muted-foreground hover:text-primary">Skills</button>
-            </div>
-          </div>
-
-          {/* Journey Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-foreground">My Journey</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Passionate about Software Development, Game Development and IoT Systems. Exploring innovative solutions
-              to refine my skills and contribute to cutting-edge projects in technology and interactive media.
-              Expected graduation: November 2027.
-            </p>
-          </div>
-
-          {/* Vision Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-foreground">My Vision</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Based in Accra, Ghana. Open to opportunities in software engineering, embedded systems, and game
-              development. Let's connect and build something impactful.
-            </p>
-          </div>
-
-          {/* Experience Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-foreground">Experience</h3>
-            <div className="p-5 rounded-lg border border-border bg-secondary/50">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                <h4 className="font-semibold text-foreground">Software Developer Intern — Cheque Processing System</h4>
-                <span className="text-xs text-muted-foreground">Apex Bank, Ghana · Sep 2025 – Nov 2025</span>
-              </div>
-              <ul className="mt-3 list-disc list-inside text-sm text-muted-foreground space-y-1">
-                <li>Developing a Cheque Processing System using C# and .NET to automate banking transaction workflows.</li>
-                <li>Designing and implementing modules for cheque validation, data entry, and reporting.</li>
-                <li>Collaborating with bank staff to refine requirements and improve usability.</li>
-                <li>Testing and debugging to ensure accurate and reliable transaction processing.</li>
-              </ul>
-            </div>
-            <div className="p-5 rounded-lg border border-border bg-secondary/50">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                <h4 className="font-semibold text-foreground">IoT Testing Intern</h4>
-                <span className="text-xs text-muted-foreground">IoT Network Hub Ghana · Jul 2024 – Sep 2024</span>
-              </div>
-              <ul className="mt-3 list-disc list-inside text-sm text-muted-foreground space-y-1">
-                <li>Performed device functionality tests on IoT modules using scripts and signal monitoring tools.</li>
-                <li>Documented bug reports and collaborated with firmware engineers for fixes.</li>
-                <li>Assisted in real-world deployment validation of IoT devices in field environments.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-            {values.map((value) => (
-              <div
-                key={value.title}
-                className="p-6 bg-secondary rounded-lg border border-border hover:border-primary/50 transition-all group cursor-pointer"
-              >
-                <value.icon className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                <h4 className="font-semibold text-foreground mb-2">{value.title}</h4>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Get in Touch Section from NEW UI with OLD functionality */}
-          <div className="bg-secondary border border-border rounded-lg p-8 space-y-6 mt-12">
+    <div className="w-full min-h-screen bg-background circuit-bg">
+      <div className="section-shell">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          {/* Left Column - Fixed Bio */}
+          <div className="lg:col-span-5 space-y-12">
             <div>
-              <h3 className="text-2xl font-semibold text-foreground">Get in Touch</h3>
-              <p className="text-muted-foreground">Send me a message — it opens your email with a prefilled draft.</p>
+              <p className="eyebrow">04. /about</p>
+              <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tight leading-none mb-8">Bio</h2>
+              <div className="fig-marker">FIG. 4 — OPERATOR INFORMATION</div>
+              <p className="text-lg text-muted-foreground leading-relaxed mt-8 border-l-2 border-primary pl-6 font-light">
+                Dedicated Computer Engineering student with a passion for creating innovative solutions through
+                code. My journey in technology has equipped me with a diverse skill set and a problem-solving mindset.
+              </p>
             </div>
-            <ContactForm toEmail="kbweeb.01@gmail.com" />
+
+            <div className="space-y-6">
+              <h3 className="text-xs font-mono text-primary uppercase tracking-[0.3em]">Vision_Protocol</h3>
+              <p className="text-muted-foreground leading-relaxed font-light">
+                Based in Accra, Ghana. Open to opportunities in software engineering, embedded systems, and game
+                development. Let's connect and build something impactful.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              {values.map((value) => (
+                <div
+                  key={value.title}
+                  className="p-6 card-technical group"
+                >
+                  <value.icon className="w-6 h-6 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-sm font-bold text-foreground mb-2 uppercase tracking-widest">{value.title}</h4>
+                  <p className="text-xs text-muted-foreground font-light leading-relaxed">{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Timeline and Experience */}
+          <div className="lg:col-span-7 space-y-16">
+            <div className="space-y-8">
+              <div>
+                <p className="eyebrow">05. /timeline</p>
+                <h3 className="text-3xl font-bold text-foreground uppercase tracking-tight">Experience</h3>
+                <div className="fig-marker">FIG. 5 — PROFESSIONAL_RECORDS</div>
+              </div>
+
+              <div className="space-y-8">
+                <div className="card-technical p-8 space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border pb-4">
+                    <h4 className="font-bold text-lg text-foreground uppercase">Software Developer Intern</h4>
+                    <span className="text-[10px] font-mono text-primary bg-primary/5 px-3 py-1 border border-primary/20">Sep 2025 – Nov 2025</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">Apex Bank, Ghana // Cheque Processing System</p>
+                  <ul className="mt-4 space-y-3">
+                    {["Developing a Cheque Processing System using C# and .NET to automate workflows.", "Designing modules for cheque validation, data entry, and reporting.", "Collaborating with staff to refine requirements and usability.", "Ensuring accurate and reliable transaction processing through testing."].map((item, i) => (
+                      <li key={i} className="flex gap-4 text-sm text-muted-foreground font-light">
+                        <span className="text-primary font-mono text-xs">[{i+1}]</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="card-technical p-8 space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border pb-4">
+                    <h4 className="font-bold text-lg text-foreground uppercase">IoT Testing Intern</h4>
+                    <span className="text-[10px] font-mono text-primary bg-primary/5 px-3 py-1 border border-primary/20">Jul 2024 – Sep 2024</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">IoT Network Hub Ghana</p>
+                  <ul className="mt-4 space-y-3">
+                    {["Performed device functionality tests on IoT modules.", "Documented bug reports and collaborated with firmware engineers.", "Assisted in real-world deployment validation of IoT devices."].map((item, i) => (
+                      <li key={i} className="flex gap-4 text-sm text-muted-foreground font-light">
+                        <span className="text-primary font-mono text-xs">[{i+1}]</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <p className="eyebrow">06. /contact</p>
+                <h3 className="text-3xl font-bold text-foreground uppercase tracking-tight">Get in Touch</h3>
+                <div className="fig-marker">FIG. 6 — COMMUNICATION_LINK</div>
+              </div>
+              <div className="card-technical p-8 bg-muted/5">
+                <p className="text-sm text-muted-foreground mb-8 font-light uppercase tracking-widest">
+                  Initialising secure communication channel...
+                </p>
+                <ContactForm toEmail="kbweeb.01@gmail.com" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-border px-6 md:px-16 py-8 mt-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>&copy; 2025 Kwabena Boateng Gyau Baffour. All rights reserved.</p>
+      <footer className="border-t border-border px-5 sm:px-8 lg:px-16 py-8 mt-16 bg-card/50">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-muted-foreground font-mono uppercase tracking-widest">
+          <p>&copy; 2026 Kwabena Boateng Gyau Baffour // SYSTEM_STATUS: ONLINE</p>
+          <div className="flex gap-8">
+            {["home", "projects", "skills"].map(view => (
+              <button key={view} type="button" onClick={() => (onNavigate ? onNavigate(view) : (window.location.hash = view))} className="hover:text-primary transition-colors cursor-pointer">
+                {view}
+              </button>
+            ))}
+          </div>
         </div>
       </footer>
     </div>

@@ -70,177 +70,133 @@ export default function ProjectsView({ onNavigate }: ProjectsViewProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (
-    <div className="w-full min-h-screen bg-background">
-      <div className="px-6 md:px-16 py-16 md:py-24">
+    <div className="w-full min-h-screen bg-background circuit-bg">
+      <div className="section-shell">
+        <div className="mb-16">
+          <p className="eyebrow">02. /projects</p>
+          <h2 className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-tight">Works</h2>
+          <div className="fig-marker">FIG. 2 — DEPLOYED ARTIFACTS</div>
+        </div>
+
         {selectedProject ? (
-          <div className="space-y-8">
+          <div className="space-y-12 animate-fade-in">
             <button
               onClick={() => setSelectedProject(null)}
-              className="text-primary hover:text-primary/80 transition-colors mb-6"
+              className="technical-button mb-8"
             >
-              ← Back to Projects
+              ← RETURN_TO_GALLERY
             </button>
 
-            {/* Project header */}
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold text-foreground uppercase">{selectedProject.title}</h2>
-              <div className="flex gap-3 flex-wrap">
-                {selectedProject.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded border border-primary/30"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Project image */}
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-secondary border border-border">
-              <Image
-                src={selectedProject.image || "/placeholder.svg"}
-                alt={selectedProject.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* Description */}
-            <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
-              {selectedProject.fullDescription}
-            </p>
-
-            {/* Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-8">
-              {selectedProject.features.map((feature, idx) => (
-                <div key={idx} className="p-4 bg-secondary rounded-lg border border-border text-center">
-                  <p className="text-sm text-muted-foreground">{feature}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-12">
-            {/* Hero project card */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Kwabena Boateng</h2>
-                <p className="text-sm text-muted-foreground max-w-md">Computer Engineering Student</p>
-                <div className="mt-6 h-px w-40 bg-primary/60 rounded" />
-                <div className="mt-6 flex flex-col gap-3">
-                  <button
-                    type="button"
-                    className="text-xs sm:text-sm font-medium text-primary text-left"
-                    aria-current="page"
-                  >
-                    — PROJECTS
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => (onNavigate ? onNavigate("skills") : (window.location.hash = "skills"))}
-                    className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
-                  >
-                    — SKILLS & TECHNOLOGIES
-                  </button>
-                  
-                  <button
-                    type="button"
-                    onClick={() => (onNavigate ? onNavigate("about") : (window.location.hash = "about"))}
-                    className="text-xs sm:text-sm font-medium text-muted-foreground hover:text-primary transition-colors text-left"
-                  >
-                    — ABOUT ME
-                  </button>
-                </div>
-              </div>
-
-              {/* Right: hero image and pills */}
-              <div className="text-left group">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div className="space-y-8">
                 <div className="space-y-4">
-                  <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
-                    <Image
-                      src={projects[0].image || "/placeholder.svg"}
-                      alt={projects[0].title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                  <h2 className="text-4xl font-bold text-foreground uppercase leading-none">{selectedProject.title}</h2>
                   <div className="flex gap-2 flex-wrap">
-                    {projects[0].tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+                    {selectedProject.tags.map((tag) => (
+                      <span key={tag} className="tag-chip">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <p className="text-xs text-muted-foreground max-w-md">
-                    {projects[0].description}
-                  </p>
-                  <div className="flex gap-3">
-                    {projects[0].demoUrl && (
-                      <a href={projects[0].demoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
-                        View Demo →
-                      </a>
-                    )}
-                    {projects[0].repoUrl && (
-                      <a href={projects[0].repoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-muted-foreground hover:text-foreground text-xs font-medium">
-                        View Code →
-                      </a>
-                    )}
-                  </div>
+                </div>
+
+                <p className="text-lg text-muted-foreground leading-relaxed border-l-2 border-primary pl-6">
+                  {selectedProject.fullDescription}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                  {selectedProject.features.map((feature, idx) => (
+                    <div key={idx} className="p-4 card-technical flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 bg-primary"></div>
+                      <p className="text-xs uppercase tracking-widest text-muted-foreground">{feature}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex gap-6 pt-6">
+                  {selectedProject.demoUrl && (
+                    <a href={selectedProject.demoUrl} target="_blank" rel="noopener noreferrer" className="technical-button technical-button-active">
+                      LIVE_DEMO.EXE
+                    </a>
+                  )}
+                  {selectedProject.repoUrl && (
+                    <a href={selectedProject.repoUrl} target="_blank" rel="noopener noreferrer" className="technical-button">
+                      SOURCE_CODE.TXT
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <div className="card-technical p-1 bg-muted/20">
+                <div className="relative w-full aspect-video overflow-hidden">
+                  <Image
+                    src={selectedProject.image || "/placeholder.svg"}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
-
-            {/* Other projects grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.slice(1).map((project) => (
-                <div key={project.id} className="text-left group">
-                  <div className="space-y-4">
-                    <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-secondary border border-border group-hover:border-primary transition-colors">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div 
+                key={project.id} 
+                className="card-technical group cursor-pointer flex flex-col"
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="relative w-full aspect-[16/10] overflow-hidden border-b border-border">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors"></div>
+                </div>
+                
+                <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors uppercase tracking-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-2 line-clamp-2 font-light leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4 pt-4">
+                    <div className="flex gap-2 flex-wrap">
+                      {project.tags.slice(0, 3).map((tag) => (
+                        <span key={tag} className="text-[9px] uppercase tracking-tighter text-muted-foreground border border-muted px-2 py-0.5">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                    <div className="space-y-2">
-                      <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">{project.description}</p>
-                      <div className="flex gap-2 flex-wrap pt-1">
-                        {project.tags.map((tag) => (
-                          <span key={tag} className="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="flex gap-3">
-                        {project.demoUrl && (
-                          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-primary hover:text-primary/80 text-xs font-medium">
-                            View Demo →
-                          </a>
-                        )}
-                        {project.repoUrl && (
-                          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="inline-block text-muted-foreground hover:text-foreground text-xs font-medium">
-                            View Code →
-                          </a>
-                        )}
-                      </div>
+                    <div className="flex justify-between items-center text-[10px] font-mono text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span>OPEN_RECORD</span>
+                      <span>[+]</span>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-border px-6 md:px-16 py-8 mt-12">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <p>&copy; 2025 Kwabena Boateng Gyau Baffour. All rights reserved.</p>
+      <footer className="border-t border-border px-5 sm:px-8 lg:px-16 py-8 mt-16 bg-card/50">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-muted-foreground font-mono uppercase tracking-widest">
+          <p>&copy; 2026 Kwabena Boateng Gyau Baffour // SYSTEM_STATUS: ONLINE</p>
+          <div className="flex gap-8">
+            {["home", "skills", "about"].map(view => (
+              <button key={view} type="button" onClick={() => (onNavigate ? onNavigate(view) : (window.location.hash = view))} className="hover:text-primary transition-colors cursor-pointer">
+                {view}
+              </button>
+            ))}
+          </div>
         </div>
       </footer>
     </div>

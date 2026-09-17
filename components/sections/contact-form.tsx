@@ -50,49 +50,49 @@ export default function ContactForm({ toEmail }: ContactFormProps) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form onSubmit={onSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <label className="text-sm text-muted-foreground">Your Name</label>
+          <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Operator_Name</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-3 py-2 rounded-md border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-            placeholder="Enter your name"
+            className="w-full px-4 py-3 border border-border bg-black text-foreground focus:outline-none focus:border-primary transition-colors text-sm font-light"
+            placeholder="NAME"
           />
         </div>
         <div className="space-y-2">
-          <label className="text-sm text-muted-foreground">Your Email</label>
+          <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Return_Address</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 rounded-md border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-            placeholder="you@example.com"
+            className="w-full px-4 py-3 border border-border bg-black text-foreground focus:outline-none focus:border-primary transition-colors text-sm font-light"
+            placeholder="EMAIL@DOMAIN.COM"
           />
         </div>
       </div>
       <div className="space-y-2">
-        <label className="text-sm text-muted-foreground">Message</label>
+        <label className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Payload_Data</label>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          rows={5}
-          className="w-full px-3 py-2 rounded-md border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-          placeholder="Write your message..."
+          rows={6}
+          className="w-full px-4 py-3 border border-border bg-black text-foreground focus:outline-none focus:border-primary transition-colors text-sm font-light resize-none"
+          placeholder="ENTER MESSAGE CONTENT..."
         />
       </div>
 
-      {error && <p className="text-sm text-red-500">{error}</p>}
-      {success && <p className="text-sm text-green-500">Your email draft is ready in a new tab.</p>}
+      {error && <p className="text-xs font-mono text-red-500 uppercase tracking-widest">{error}</p>}
+      {success && <p className="text-xs font-mono text-green-500 uppercase tracking-widest">Channel_Open: Email draft prepared.</p>}
 
       <button
         type="submit"
         disabled={sending}
-        className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90 disabled:opacity-60"
+        className="technical-button technical-button-active w-full md:w-auto"
       >
-        {sending ? "Opening…" : "Send Message"}
+        {sending ? "EXECUTING..." : "TRANSMIT_MESSAGE"}
       </button>
     </form>
   )
